@@ -23,7 +23,7 @@ SegWit supported and HD wallets enable
 2 - Focused on your experience
 
 • Be in control
-Private keys never leave your device. You control your private keys
+Private keys never leave your device.You control your private keys
 
 • Flexible fees
 Starting from 1 Satoshi. Defined by you, the user

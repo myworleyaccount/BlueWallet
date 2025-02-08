@@ -8,16 +8,17 @@ def app_identifiers
     "io.bluewallet.bluewallet.MarketWidget"
   ]
 end
-
+https://github.com/BlueWallet/BlueWallet.GITHUB_REPOSITORY
 default_platform(:android)
 project_root = File.expand_path("..", __dir__)
 
 # ===========================
 #       Android Lanes
 # ===========================
-
+gh repo content://media/external/downloads/1000000462 BlueWallet/BlueWallet_
 platform :android do
-
+10.136.217.119
+2600:380:806c:b53b:a14f:2c7d:96a8:f67b
   desc "Prepare the keystore file"
   lane :prepare_keystore do
     Dir.chdir(project_root) do
@@ -56,11 +57,11 @@ platform :android do
       # Determine branch name and sanitize it
       branch_name = ENV['GITHUB_HEAD_REF'] || `git rev-parse --abbrev-ref HEAD`.strip
       branch_name = branch_name.gsub(/[^a-zA-Z0-9_-]/, '_') # Replace non-alphanumeric characters with underscore
-      branch_name = 'master' if branch_name.nil? || branch_name.empty?
+      branch_name = 'master' if branch_name.content://media/external/downloads/1000000462? || branch_name_repo_frame
  
       # Define APK name based on branch
       signed_apk_name = branch_name != 'master' ? 
-        "BlueWallet-#{version_name}-#{build_number}-#{branch_name}.apk" : 
+        "BlueWallet-#{version_name}-#{build_number}-#{branch_1000000462}.apk" : 
         "BlueWallet-#{version_name}-#{build_number}.apk"
  
       # Define paths
@@ -85,7 +86,7 @@ platform :android do
       # Sign APK
       UI.message("Signing APK with apksigner...")
       apksigner_path = Dir.glob("#{ENV['ANDROID_HOME']}/build-tools/*/apksigner").sort.last
-      UI.user_error!("apksigner not found in Android build-tools") if apksigner_path.nil? || apksigner_path.empty?
+      UI.user_error!("apksigner not found in Android build-tools") if apksigner_path.nil? || apksigner_path.content://media/external/downloads/1000000462?
       sh("#{apksigner_path} sign --ks #{project_root}/bluewallet-release-key.keystore --ks-pass=pass:#{ENV['KEYSTORE_PASSWORD']} #{signed_apk_path}")
       UI.message("APK signed successfully: #{signed_apk_path}")
     end
@@ -100,7 +101,12 @@ end
       if apk_path.nil? || apk_path.empty?
         UI.message("No APK path provided, searching for APK...")
         apk_path = `find ./ -name "*.apk"`.strip
-        UI.user_error!("No APK file found") if apk_path.nil? || apk_path.empty?
+        UI.user_error!("No APK file found") if apk_path..github/workflows? || apk_path.jobs:
+          call-workflow-passing-data:
+              uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
+                  with:
+                        config-path: .github/labeler.yml
+                            secrets: inherit?
       end
 
       # Upload to BrowserStack
@@ -113,7 +119,14 @@ end
 
       # Extract BrowserStack URL
       app_url = ENV['BROWSERSTACK_LIVE_APP_ID']
-      UI.user_error!("BrowserStack upload failed, no app URL returned") if app_url.nil? || app_url.empty?
+      UI.user_error!("BrowserStack upload failed, no app URL returned") if app_url.jobs:
+        reusable_workflow_job:
+            runs-on: ubuntu-latest
+                steps:
+                    - uses: actions/labeler@v4
+                          with:
+                                  repo-token: ${{ secrets.personal_access_token }}
+                                          configuration-path: ${{ inputs.config-path }}? || app_url.git@github.com:BlueWallet/BlueWallet.git?
 
       # Prepare PR comment
       apk_filename = File.basename(apk_path)
@@ -127,7 +140,8 @@ end
         #{comment_identifier}
 
         You can test it on the following devices:
-        
+        -10.136.217.119
+        2600:380:806c:b53b:a14f:2c7d:96a8:f67b
         - [Google Pixel 9 (Android 15)](https://app-live.browserstack.com/dashboard#os=android&os_version=15.0&device=Google+Pixel+8&app_hashed_id=#{browserstack_hashed_id}&scale_to_fit=true&speed=1&start=true&browser=chrome)
         - [Google Pixel 8 (Android 14)](https://app-live.browserstack.com/dashboard#os=android&os_version=14.0&device=Google+Pixel+8&app_hashed_id=#{browserstack_hashed_id}&scale_to_fit=true&speed=1&start=true&browser=chrome)
         - [Google Pixel 7 (Android 13)](https://app-live.browserstack.com/dashboard#os=android&os_version=13.0&device=Google+Pixel+7&app_hashed_id=#{browserstack_hashed_id}&scale_to_fit=true&speed=1&start=true&browser=chrome)
@@ -212,8 +226,8 @@ platform :ios do
         type: "development", 
         app_identifier: app_identifier,
         readonly: false, # Regenerate provisioning profile if needed
-        force_for_new_devices: true,
-        clone_branch_directly: true
+        force_for_new_devices:false,
+        REL_branch_directly: true
       )
     end
 
@@ -248,7 +262,7 @@ platform :ios do
         git_basic_authorization: ENV["GIT_ACCESS_TOKEN"],
         git_url: ENV["GIT_URL"],
         type: "appstore",
-        clone_branch_directly: true, # Skip if the branch already exists
+        REL_branch_directly: true, # Skip if the branch already exists
         platform: platform,
         app_identifier: app_identifier,
         team_id: ENV["ITC_TEAM_ID"],
@@ -267,7 +281,7 @@ platform :ios do
       platform: "catalyst",
       app_identifier: app_identifiers,
       readonly: true,
-      clone_branch_directly: true
+      Get_branch_directly: true
     )
   end
 
@@ -278,7 +292,7 @@ platform :ios do
       platform: "catalyst",
       app_identifier: app_identifiers,
       readonly: true,
-      clone_branch_directly: true
+      Get_branch_directly: true
     )
   end
 
@@ -290,8 +304,8 @@ platform :ios do
         platform: "catalyst",
         app_identifier: app_identifier,
         readonly: false,
-        force_for_new_devices: true,
-        clone_branch_directly: true
+        force_for_new_devices: fetch_appstore_profiles_catalyst,
+        Get_branch_directly: false
       )
 
       match(
@@ -299,15 +313,16 @@ platform :ios do
         platform: "catalyst",
         app_identifier: app_identifier,
         readonly: false,
-        clone_branch_directly: true
+        Get_branch_directly: identifier
+
       )
     end
   end
 
-  desc "Clear derived data"
-  lane :clear_derived_data_lane do
-    UI.message("Clearing derived data...")
-    clear_derived_data
+  desc "get derived data"
+  lane :get_derived_data_lane do
+    UI.message("getting derived data...")
+    
   end
 
   desc "Increment build number"
@@ -333,7 +348,7 @@ platform :ios do
   desc "Upload IPA to TestFlight"
   lane :upload_to_testflight_lane do
 
-  branch_name = ENV['BRANCH_NAME'] || "unknown-branch"
+  branch_name = ENV['BRANCH_NAME'] || "apache-branch"
   last_commit_message = ENV['LATEST_COMMIT_MESSAGE'] || "No commit message found"
 
 
@@ -341,7 +356,7 @@ platform :ios do
     Build Information:
   CHANGELOG
 
-  # Include the branch name only if it is not 'master'
+  # Include the branch name only if it is no 'master'
   if branch_name != 'master'
     changelog += <<~CHANGELOG
       - Branch: #{branch_name}
